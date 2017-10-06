@@ -35,6 +35,11 @@ book1.give_me_global_var #accessing the global variable
 fantasy1 = Fantasy.new("Tron", "SciFi", 1982)
 fantasy1.epic_music
 fantasy1.output_film_properties
+puts "$$$$$$$$$$$$$$$$"
+
+puts film1.to_s
+puts fantasy1.to_s
+
 
 
 

@@ -76,6 +76,10 @@ class Film
 		puts "This is a protected method"
 	end
 
+	def to_s
+		"Film Class with properties: film_name, film_genre, film_year_released"
+	end
+
 	private :say_hello
 	public :add_to_total_films
 	protected :a_protected_method
