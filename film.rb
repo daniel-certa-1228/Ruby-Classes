@@ -7,6 +7,11 @@ class Film
 	#class variables are shared within the class
 	@@total_number_of_films = 0
 
+	# accessor methods need to be symbols
+	# attr_reader 
+	# attr_writer 
+	attr_accessor :film_name, :film_genre, :film_year_released
+
 	def initialize(film_name, genre, year_released)
 		#initializing arguments are initialized on creation
 		#instance variables begin with the ampersand '@' and are scoped to the instance of the class
@@ -16,19 +21,46 @@ class Film
 		add_to_total_films
 	end
 
+	#getter and setters
+	#getter
+	# def film_name
+	# 	@film_name
+	# end
+	# #setter
+	# def film_name=(name)
+	# 	@film_name = name
+	# end
+	# #getter
+	# def film_genre
+	# 	@film_genre
+	# end
+	# #setter
+	# def film_genre=(genre)
+	# 	@film_genre = genre
+	# end
+	# #getter
+	# def film_year_released
+	# 	@film_year_released
+	# end
+	# #setter
+	# def film_year_released=(year)
+	# 	@film_year_released = year
+	# end
+
 	def say_hello
 		# local variable can start with small letter or underscore
 		_hello_string = "Hello"
-		puts "#{_hello_string}, #{@film_name}. You are a #{@film_genre} film from the year #{@film_year_released}."
+		puts "#{_hello_string}, #{film_name}. You are a #{film_genre} film from the year #{film_year_released}."
 	end
-
-	def current_total_number_of_films
+	#CLASS methods are prepended by self
+	def self.current_total_number_of_films
 		puts "Current total_number_of_films: #{@@total_number_of_films}"
 	end
 
 	def add_to_total_films
 		@@total_number_of_films += 1
-		# current_total_number_of_films
+		#class methods can be called from within the class with self.class
+		self.class.current_total_number_of_films
 	end
 
 end
