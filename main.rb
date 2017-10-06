@@ -37,8 +37,11 @@ fantasy1.epic_music
 fantasy1.output_film_properties
 puts "$$$$$$$$$$$$$$$$"
 
+# the to_s method has been overridden on the Film and Fantasy class
 puts film1.to_s
 puts fantasy1.to_s
+
+
 
 
 
