@@ -4,6 +4,10 @@
 $warning = "Global variables are not recommended."
 
 class Film
+
+	#class constant ALL CAPS
+	COUNTRY = "U.S.A."
+
 	#class variables are shared within the class
 	@@total_number_of_films = 0
 
@@ -53,7 +57,7 @@ class Film
 		puts "#{_hello_string}, #{film_name}. You are a #{film_genre} film from the year #{film_year_released}."
 	end
 	#CLASS methods are prepended by self
-	def self.current_total_number_of_films
+	def Film.current_total_number_of_films
 		puts "Current total_number_of_films: #{@@total_number_of_films}"
 	end
 
@@ -62,5 +66,18 @@ class Film
 		#class methods can be called from within the class with self.class
 		self.class.current_total_number_of_films
 	end
+
+	def output_film_properties
+		puts "Name: #{film_name}, Genre: #{film_genre}, Year #{film_year_released}"
+	end
+
+	### a protected method can be called by instance objects
+	def a_protected_method
+		puts "This is a protected method"
+	end
+
+	private :say_hello
+	public :add_to_total_films
+	protected :a_protected_method
 
 end
